@@ -7,7 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component'; 
 import { RouterModule } from '@angular/router';
-import { ErrorComponent } from './error/error.component';
+import { PanelNauczycielaComponent } from './panel-nauczyciela/panel-nauczyciela.component';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { ErrorComponent } from './error/error.component';
     AdminComponent,
     HomeComponent,
     LoginComponent,
-    ErrorComponent
+    PanelNauczycielaComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +33,10 @@ import { ErrorComponent } from './error/error.component';
       {
         path: 'admin',
         component: AdminComponent
+      },
+      {
+        path: 'panel_nauczyciela',
+        component: PanelNauczycielaComponent
       }
     ])
   ],
