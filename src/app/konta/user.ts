@@ -1,5 +1,5 @@
 import { Role } from './role';
 
-export class user {
+export class User {
     role: Role;
 }
