@@ -7,6 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component'; 
 import { RouterModule } from '@angular/router';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     AdminComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
