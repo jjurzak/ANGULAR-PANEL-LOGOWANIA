@@ -9,7 +9,13 @@ export class AdminComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
+
+  loginAdmin(event) {
+    event.preventDefault()
+  }
+
+
 
 }
