@@ -1,3 +1,17 @@
-<input type="text" name="email" [(ngModel)]="email">
-<input type="text" name="password" [(ngModel)]="password">
-<button (click)="loguj()">ok</button>
+<div class="container">
+  <div class="forms-container">
+    <div class="logowanie">
+      <form action="/panel_nauczyciela" class="sign-form">
+        <h2 class="title">Logowanie</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" name="email" [(ngModel)]="email">
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" name="password" [(ngModel)]="password">
+        </div>
+        <button (click)="loguj()" type="submit" value="Zaloguj" class="btn solid">ok</button>
+      </form>
+    </div>
+  </div>
