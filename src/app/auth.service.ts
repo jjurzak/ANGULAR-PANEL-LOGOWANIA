@@ -1,33 +1,25 @@
 import { Injectable } from '@angular/core';
-import { User } from '../app/konta/user'
-import { Role } from '../app/konta/role'
+import {HttpClient, HttpHeaders, } from "@angular/common/http";
+import { stringify } from 'querystring';
+import { environment } from 'src/environments/environment';
 
-
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
-    private user: User;
-
-
-
-    isAuthorized() {
-        return !!this.user;
-    }
-
-
-
-    hasRole(role: Role) {
-        return this.isAuthorized() && this.user.role === role;
-    }
-
-
-
-    login(role: Role){
-      this.user = { role: role};
-    }
-
-    logout() {
-      this.user = null
-    }
-
+ headers = new HttpHeaders({'Content-Type': 'application/json'});
+  constructor(private http:HttpClient) { 
+    
+    //this.headers.set('Content-Type', 'text/html; charset=utf-8');
   }
+ 
+  getUser()
+  {
+    return this.http.get(environment.URL + "/user");
+  } 
 
+  login(_email, pass)
+  {
+   return  this.http.post(environment.URL + "/login",  {email:_email, password:pass},{ headers: this.headers });
+  }
+}
